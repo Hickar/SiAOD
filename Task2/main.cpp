@@ -10,6 +10,8 @@ using namespace std;
 using Key = int;
 using Value = string;
 
+// Функция, нормализующая строку, убирая из неё проблелы в начале и в конце
+// при присутствии таковых
 string normalizeString(string& str, char character) {
 	string result = str;
 	if (result.at(0) == character) result.erase(result.begin());
@@ -17,6 +19,7 @@ string normalizeString(string& str, char character) {
 	return result;
 }
 
+// Функция, разделяющая строку на несколько подстрок, разделённых указанным символом
 pair<Key, Value> splitLine(string &line, char delimiter) {
 	pair<Key, Value> hashEntry{};
 	string token;
@@ -32,6 +35,7 @@ pair<Key, Value> splitLine(string &line, char delimiter) {
 	return hashEntry;
 }
 
+// Функция, осуществляющая считывание записей из текстового файла
 vector<pair<Key, Value>> getRecordsFromFile(string filename, const char delimiter) {
 	vector<pair<Key, Value>> records{};
 	string line{};
@@ -58,7 +62,22 @@ int main() {
 		hashTable.insert(record.first, record.second);
 	}
 
+	cout << "Изначальная хеш-таблица: " << endl;
 	cout << hashTable << endl;
+
+	//TEST: removing some elements
+	hashTable.remove(1000003);
+	hashTable.remove(1000009);
+	hashTable.remove(1000021);
+
+	cout << "Хеш-таблица после удаления элементов со следующими ключами: 1000003, 1000009, 1000021" << endl;
+	cout << hashTable << endl;
+
+	//TEST: finding elements
+	cout << "Поиск значений элементов по следующим ключам: " << endl;
+	cout << "1000005: " << hashTable.find(1000005) << endl;
+	cout << "1000000: " << hashTable.find(1000000) << endl;
+	cout << "1000030: " << hashTable.find(1000030) << endl;
 
 	return 0;
 }

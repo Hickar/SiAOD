@@ -17,6 +17,7 @@ public:
 		delete[] array;
 	};
 
+	// Метод insert производит запись указанного значение в ячейку с указанным ключом
 	void insert(Key key, Value value) {
 		if (size + 1 > int(rehash_size * buffer_size)) {
 			resize();
@@ -41,6 +42,7 @@ public:
 		}
 	};
 
+	// Метод удаляющий запись по её ключу
 	void remove(Key key) {
 		int hash = this->hash(key);
 		int i{1};
@@ -57,17 +59,20 @@ public:
 		}
 	};
 
+	// Метод нахождения значения по ключу записи
 	Value find(Key key) {
 		auto node = &array[hash(key)];
 		if (!node->isFree && !node->isDeleted) return node->value;
 		else return {};
 	}
 
+	// Метод, изменяющий размер массива по достижении им коэффициента загрузки (75%)
 	void resize() {
 		old_buffer_size = buffer_size;
 		buffer_size *= 2;
 	};
 
+	// Метод, переинициализациющий массив и последующее рехеширование всех его записей
 	void rehash() {
 		Node *oldArray = array;
 		array = new Node[buffer_size];
@@ -80,18 +85,23 @@ public:
 		size_all_non_nullptr = 0;
 	};
 
+	// Метод, реализующий хешеривание ключа
 	int hash(Key key) {
 		return key % buffer_size;
 	}
 
+
+	// Метод, возвращающий размер массива
 	int getBufferSize() {
 		return buffer_size;
 	}
 
+	// Метод, возвращающий ключ указанного элемента из массива
 	Key getKey(int i) {
 		return array[i].key;
 	}
 
+	// Метод, при помощи которого можно совершить операцию вывода в cout объекта данного класса
 	friend ostream &operator<<(ostream &os, HashTable &hashTable) {
 		for (int i = 0; i < hashTable.getBufferSize(); i++) {
 			Key key{hashTable.getKey(i)};
@@ -101,9 +111,13 @@ public:
 	}
 
 private:
-	constexpr static float rehash_size{0.75};
-	int size{}, buffer_size{}, size_all_non_nullptr{}, old_buffer_size{};
+	constexpr static float rehash_size{0.75}; // Коэффициент загрузки
+	int size{}; // Количество занятых элементов
+	int buffer_size{}; // Общее количество элементов
+	int size_all_non_nullptr{}; // Количество занятых элементов, включая удалённые
+	int old_buffer_size{}; // Общее количество элементов перед его рехешированием
 
+	// Структура Node, реализующая собою запись в хеш-таблице
 	struct Node {
 		Key key{0};
 		Value value{""};
@@ -132,6 +146,7 @@ private:
 		~Node() = default;
 	};
 
+	// Массив всех записей хеш-таблицы
 	Node *array;
 };
 

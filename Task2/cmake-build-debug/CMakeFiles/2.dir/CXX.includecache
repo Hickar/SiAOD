@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task2/hashtable.cpp
+iostream
+-
+optional
+-
+
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task2/main.cpp
+iostream
+-
+string
+-
+sstream
+-
+fstream
+-
+vector
+-
+hashtable.cpp
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task2/hashtable.cpp
+
