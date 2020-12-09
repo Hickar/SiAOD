@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task3/binaryTree.cpp
+iostream
+-
+cmath
+-
+queue
+-
+
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task3/main.cpp
+iostream
+-
+binaryTree.cpp
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task3/binaryTree.cpp
+
