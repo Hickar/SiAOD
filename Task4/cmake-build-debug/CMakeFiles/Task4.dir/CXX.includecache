@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/BST.cpp
+iostream
+-
+cmath
+-
+
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/BalancedBST.cpp
+iostream
+-
+cmath
+-
+
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/FileHandler.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+vector
+-
+string
+-
+
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/main.cpp
+iostream
+-
+string
+-
+BST.cpp
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/BST.cpp
+BalancedBST.cpp
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/BalancedBST.cpp
+FileHandler.cpp
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/FileHandler.cpp
+

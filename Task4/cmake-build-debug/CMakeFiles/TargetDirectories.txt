@@ -1,0 +1,3 @@
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/home/Documents/Учёба/Структуры и АОД/Практика (2 курс)/Task4/cmake-build-debug/CMakeFiles/Task4.dir
